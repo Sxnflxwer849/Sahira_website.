@@ -142,7 +142,30 @@ main {
   background-color: #ffffff;
   padding: 2rem;
 }
+main {
+  position: relative;
+  overflow: hidden;
+  color: #eaeaea;
+}
 
+/* blurred background layer */
+.blur-bg {
+  position: absolute;
+  inset: 0;
+  background: rgba(15, 18, 30, 0.6);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  z-index: 0;
+}
+
+/* content stays on top */
+.page-wrapper {
+  position: relative;
+  z-index: 1;
+  padding: 60px;
+  max-width: 900px;
+  margin: auto;
+}
 main h2 {
   margin-bottom: 1rem;
 }
