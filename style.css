@@ -160,9 +160,7 @@ section {
   background-color: #fff;         /* white background */
   box-shadow: 0 4px 12px rgba(0,0,0,0.1); /* subtle shadow for depth */
   box-sizing: border-box;   
-   background: rgba(15, 18, 30, 0.65);
-  backdrop-filter: blur(8px);
-  -webkit-backdrop-filter: blur(8px);
+
 
   border-radius: 18px;
   padding: 40px;
