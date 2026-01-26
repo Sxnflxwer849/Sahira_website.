@@ -160,6 +160,13 @@ section {
   background-color: #fff;         /* white background */
   box-shadow: 0 4px 12px rgba(0,0,0,0.1); /* subtle shadow for depth */
   box-sizing: border-box;   
+  border-radius: 18px;
+  padding: 40px;
+  margin: 60px auto;
+  max-width: 900px;
+
+  color: #eaeaea;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.35);/* include padding/border in size */
 }
 
 .nav-buttons {
