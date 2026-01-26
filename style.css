@@ -157,7 +157,7 @@ section {
   padding: 1.5rem 2rem;           /* space inside the box */
   border: 2px solid #ccc;         /* light gray border */
   border-radius: 12px;            /* rounded corners */
-  background-color: #fff;         /* white background */
+   background-color: transparent;       /* white background */
   box-shadow: 0 4px 12px rgba(0,0,0,0.1); /* subtle shadow for depth */
   box-sizing: border-box;   
   border-radius: 18px;
