@@ -1,41 +1,10 @@
 /* ============================================================
-   WEBSITE STYLESHEET — READ FIRST
-
-   This file controls the look of your ENTIRE website.
-   All pages (index, about, gallery, contact) use this file.
-
-   ✔ You ARE expected to edit this file in Lesson 5.5
-   ✔ Change values (fonts, colours, spacing) — not structure
-   ✔ Save often and refresh your browser to see changes
-
-   SAFE TO EDIT:
-   - font-family
-   - font-size
-   - colors (color, background-color)
-   - spacing (margin, padding)
-   - borders, border-radius, box-shadow
-   - hover effects
-
-   DO NOT EDIT (yet):
-   - layout structure rules
-   - display: flex / grid on main layout containers
-   - widths that control navigation placement
-   - class or selector names
-
-   RULES:
-   - Make ONE change at a time
-   - Refresh the browser after every change
-   - If something breaks, undo your last change
-
-   Need help?
-   Use W3Schools:
-   https://www.w3schools.com/css/
-
+   WEBSITE STYLESHEET
    ============================================================ */
 
-   /* ==================================================
+/* =====================
    GLOBAL RESET + BASE
-   ================================================== */
+   ===================== */
 
 * {
   box-sizing: border-box;
@@ -46,14 +15,13 @@
 body {
   font-family: Arial, Helvetica, sans-serif;
   background-color: #f4f4f4;
-  color: #222;
   line-height: 1.6;
-  color: #000000;
+  color: #000000; /* BLACK TEXT */
 }
 
-/* ==================================================
+/* =====================
    HEADER
-   ================================================== */
+   ===================== */
 
 header {
   background-image: url('banner.png');
@@ -61,19 +29,16 @@ header {
   background-position: center;
   background-repeat: no-repeat;
 
-  min-height: 300px;          /* header height */
+  min-height: 300px;
   width: 100%;
-  padding: 2rem 1rem 1.5rem;  /* space inside the header */
-  box-sizing: border-box;
+  padding: 2rem 1rem 1.5rem;
 
-  /* flex container stacking top to bottom */
   display: flex;
   flex-direction: column;
-  justify-content: flex-start; /* start at top, not centered */
-  align-items: center;         /* center horizontally */
+  justify-content: flex-start;
+  align-items: center;
 
-  /* text style */
-  color: #fff;
+  color: #ffffff; /* WHITE text only for header */
   font-size: 10px;
   letter-spacing: 2px;
   border-bottom: 2px solid black;
@@ -85,48 +50,37 @@ header {
 header h1 {
   margin: 0 0 0.25rem 0;
   font-weight: 700;
-  align-self: center; /* center just to be sure */
 }
 
 header p {
   font-size: 0.9rem;
-  opacity: 0.8;
-  margin: 0 0 1.5rem 0;
+  opacity: 0.9;
 }
 
-/* ==================================================
+/* =====================
    LAYOUT (DO NOT REMOVE)
-   ================================================== */
+   ===================== */
 
 .layout {
   display: flex;
   min-height: calc(100vh - 140px);
 }
 
-
-/* ==================================================
-   HEADER NAVIGATION (INSIDE HEADER)
-   ================================================== */
-
-.navbar {
-  margin-top: 0;
-}
+/* =====================
+   NAVIGATION
+   ===================== */
 
 .navbar ul {
   list-style: none;
-  padding: 0;
-  margin: 0;
   display: flex;
   gap: 2rem;
   justify-content: center;
-  width: 100%;
 }
 
 .navbar li a {
   color: white;
   text-decoration: none;
   font-weight: 500;
-  padding-bottom: 0.2rem;
   font-size: 17px;
 }
 
@@ -134,39 +88,46 @@ header p {
   border-bottom: 2px solid white;
 }
 
-/* ==================================================
+/* =====================
    MAIN CONTENT
-   ================================================== */
+   ===================== */
 
 main {
   flex: 1;
   background-color: #ffffff;
   padding: 2rem;
+  color: #000000; /* FORCE BLACK */
 }
 
-main h2 {
-  margin-bottom: 1rem;
-}
-
-section {
-  margin-bottom: 2rem;
-}
+/* =====================
+   PAGE WRAPPER (FIX)
+   ===================== */
 
 .page-wrapper {
-  max-width: 900px;               /* limit max width for neatness */
-  margin: 2rem auto;              /* center horizontally, add vertical margin */
-  padding: 1.5rem 2rem;           /* space inside the box */
-  border: 2px solid #ccc;         /* light gray border */
-  border-radius: 12px;            /* rounded corners */
-   background-color: #fff;       /* white background */
-  box-shadow: 0 4px 12px rgba(0,0,0,0.1); /* subtle shadow for depth */
-  box-sizing: border-box;   
-  border-radius: 18px;
-  padding: 40px;
-  margin: 60px auto;
   max-width: 900px;
-  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.35);/* include padding/border in size */
+  margin: 60px auto;
+  padding: 40px;
+  background-color: #ffffff;
+  border-radius: 18px;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.35);
+
+  color: #000000;     /* 🔥 FIX */
+  opacity: 1;         /* 🔥 KILLS FADED TEXT */
 }
+
+/* Force all text inside page-wrapper */
+.page-wrapper h1,
+.page-wrapper h2,
+.page-wrapper h3,
+.page-wrapper p,
+.page-wrapper li {
+  color: #000000;
+  opacity: 1;
+}
+
+/* =====================
+   BUTTONS
+   ===================== */
 
 .nav-buttons {
   display: flex;
@@ -174,30 +135,21 @@ section {
   margin: 40px 0;
 }
 
-.nav-btn {
+.nav-btn,
+.side-btn {
   padding: 12px 24px;
   background-color: #333;
   color: white;
-  text-decoration: none;
   border-radius: 6px;
   font-weight: 600;
+  text-decoration: none;
   transition: background-color 0.3s ease;
 }
 
-.nav-btn:hover {
+.nav-btn:hover,
+.side-btn:hover {
   background-color: #555;
 }
-
-.nav-btn.back {
-  align-self: flex-start;
-}
-
-.nav-btn.next {
-  align-self: flex-end;
-}
-/* ==================================================
-   SIDE NAV BUTTONS (SAME STYLE, DIFFERENT CLASSES)
-   ================================================== */
 
 .side-nav {
   width: 220px;
@@ -206,47 +158,18 @@ section {
   gap: 14px;
 }
 
-/* Button base */
-.side-btn {
-  padding: 12px 24px;
-  background-color: #333;
-  color: white;
-  border: none;
-  border-radius: 6px;
-  font-weight: 600;
-  text-align: left;
-  cursor: pointer;
-  transition: background-color 0.3s ease;
-}
-
-/* Hover */
-.side-btn:hover {
-  background-color: #555;
-}
-
-/* Active state */
 .side-btn.active {
   background-color: #000;
 }
 
-/* ==================================================
+/* =====================
    FOOTER
-   ================================================== */
+   ===================== */
 
 footer {
   background-color: #222;
-  color: #fff;
+  color: #ffffff;
   text-align: center;
   padding: 1rem;
   font-size: 0.85rem;
 }
-
-/* ==================================================
-   STUDENT SAFE EDIT ZONE
-   ==================================================
-   ✔ Fonts
-   ✔ Colours
-   ✔ Spacing
-   ✔ Hover effects
-   ✖ Layout (.layout, aside width)
-   ================================================== */
